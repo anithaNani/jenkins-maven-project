@@ -11,7 +11,7 @@ pipeline{
         }
         stage("Maven Build"){
             steps{
-                sh "mvn -f hello-world/pom.xml -B -DskipTests clean package"
+                sh "mvn -f hello-app/pom.xml -B -DskipTests clean package"
                 sh "mv target/*.war target/myweb.war"
             } 
         }
