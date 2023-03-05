@@ -20,9 +20,9 @@ pipeline{
                 sh """
                     scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline1/hello-app/target/*.jar  ubuntu@172.31.20.160:/home/ubuntu/apache-tomcat-9.0.72/webapps/
                     
-                    ssh ubuntu@172.31.20.160:/home/ubuntu/apache-tomcat-9.0.72/bin/shutdown.sh
+                    ssh ubuntu@172.31.20.160 /home/ubuntu/apache-tomcat-9.0.72/bin/shutdown.sh
                     
-                    ssh ubuntu@172.31.20.160:/home/ubuntu/apache-tomcat-9.0.72/bin/startup.sh
+                    ssh ubuntu@172.31.20.160 /home/ubuntu/apache-tomcat-9.0.72/bin/startup.sh
                 
                 """
             }
